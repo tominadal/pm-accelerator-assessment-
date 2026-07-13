@@ -1,0 +1,13 @@
+.app-footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: auto;
+  font-size: 0.875rem;
+}
+
+.org-desc {
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}

@@ -1,0 +1,53 @@
+﻿Tech Assessment: Weather Trend Forecasting
+
+
+Objective
+Analyze the "Global Weather Repository.csv" dataset to forecast future weather trends and showcase data science skills through both basic and advanced techniques. This dataset provides Daily weather information for cities around the world. This dataset offers a comprehensive set of features that reflect the weather conditions worldwide. It includes over 40 features.
+Note: You can choose between completing the basic or advanced assessments. Showcasing advanced analyses can reflect a higher level of skill, but fulfilling either set of requirements is acceptable.
+Dataset
+* The dataset is available on the Kaggle website. 
+World Weather Repository: https://www.kaggle.com/datasets/nelgiriyewithana/global-weather-repository/code
+Assessment Details
+Basic Assessment
+Data Cleaning & Preprocessing
+* Handle missing values, outliers, and normalize data.
+Exploratory Data Analysis (EDA)
+* Perform basic EDA to uncover the trends, correlations, and patterns.
+* Generate visualizations for temperature and precipitation.
+Model Building
+* Build a basic forecasting model and evaluate its performance using different metrics.
+* Use lastupdated feature for the time series analysis.
+
+
+Advanced Assessment
+Advanced EDA
+* Implement anomaly detection to and analyze outliers.
+Forecasting with Multiple Models
+*   Build and compare multiple forecasting models
+*   Create an ensemble of models to improve forecast accuracy.
+Unique Analyses
+* Climate Analysis: Study long-term climate patterns and variations in different regions.
+* Environmental Impact: Analyze air quality and its correlation with various weather parameters.
+* Feature Importance: Apply different techniques to assess feature importance.
+* Spatial Analysis: Analyze and visualize geographical patterns in the data.
+* Geographical Patterns: Explore how weather conditions differ across countries and continents.
+
+
+ Deliverable:
+* Display the PM Accelerator mission on the report/presentation/dashboard. You can find it on the website.
+* Create a simple report or presentation that includes all analyses, model evaluations, and visualizations.
+* Explain the data cleaning, EDA, forecasting models, advanced analyses, and insights in a well-organized format.
+* Submit the report or presentation in a Github repository or project folder. Include a detailed `README.md` or equivalent documentation explaining the project, methodology, and results.
+* Share the link to the repository or project folder by the submission deadline.
+ Submission:
+* When: Please send us your project AS SOON AS POSSIBLE by submitting this Google form  no later than 7 days after receiving the assessment. If for special scenarios, you need more time to complete it, let us know. (If Dual Role applicant, then have 10 days to complete)
+
+
+* How: Share a link to your GitHub repo with the code and a brief README on how to run it and what you did. 
+   * IMPORTANT: Public vs. Private repository options
+      * Set your Github repository “public” and “open-source”. Or our tech team can’t access and evaluate your code. You can make the repository “private” after we finish code evaluation. 
+      * Alternatively, you can set your repository to  private and then must allow collaboration from Github account = community@pmaccelerator.io & hr@pmaccelerator.io
+         * Allow the ability to Clone or Download
+      * Have a requirements file show which libraries/packages need to be installed
+
+   * Share a short demo video explanation of your project. Provide a recorded screen sharing and also 1-2min demo showing & explaining both the code and output results based on above requirements. Share a viewable URL of the demo video in your submission.  (can be hosted on Google drive or YT, or Vimeo, etc..)

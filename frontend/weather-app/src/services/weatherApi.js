@@ -53,7 +53,17 @@ const fetchWeatherData = async (lat, lon, locationName) => {
 };
 
 export const getWeather = async (query) => {
-  if (!query || query.trim() === '') {
+  if (!query) {
+    throw new Error('Please enter a location.');
+  }
+
+  // If query is an object from our suggestions, we already have coordinates
+  if (typeof query === 'object' && query.latitude && query.longitude) {
+    return await fetchWeatherData(query.latitude, query.longitude, query.name);
+  }
+
+  // Otherwise, it's a string from manual typing
+  if (typeof query === 'string' && query.trim() === '') {
     throw new Error('Please enter a location.');
   }
 
@@ -74,7 +84,7 @@ export const getWeather = async (query) => {
   
   const fullNameParts = [name];
   if (admin1 && admin1 !== name) fullNameParts.push(admin1);
-  fullNameParts.push(country);
+  if (country) fullNameParts.push(country);
   
   const fullName = fullNameParts.join(', ');
 
@@ -103,5 +113,33 @@ export const getWeatherByCoords = async (lat, lon) => {
   } catch (error) {
     console.warn("Reverse geocoding failed, using coordinates:", error);
     return await fetchWeatherData(lat, lon, `Lat: ${lat.toFixed(2)}, Lon: ${lon.toFixed(2)}`);
+  }
+};
+
+export const searchLocations = async (query) => {
+  if (!query || query.trim() === '') return [];
+  try {
+    const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5`;
+    const response = await fetch(geoUrl);
+    if (!response.ok) return [];
+    
+    const data = await response.json();
+    if (!data.results) return [];
+    
+    return data.results.map(result => {
+      const { id, name, admin1, country, latitude, longitude } = result;
+      const fullNameParts = [name];
+      if (admin1 && admin1 !== name) fullNameParts.push(admin1);
+      if (country) fullNameParts.push(country);
+      return {
+        id,
+        name: fullNameParts.join(', '),
+        latitude,
+        longitude
+      };
+    });
+  } catch (err) {
+    console.error("Failed to fetch location suggestions:", err);
+    return [];
   }
 };

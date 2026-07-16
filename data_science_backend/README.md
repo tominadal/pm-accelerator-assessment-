@@ -1,4 +1,4 @@
-﻿# Data Science Assessment: Weather Trend Forecasting
+# Data Science Assessment: Weather Trend Forecasting
 
 This repository contains the Data Science / AI Engineer Assessment for the PM Accelerator Internship.
 
@@ -44,9 +44,9 @@ Analyze the **Global Weather Repository** dataset (152,997 records, 211 countrie
 4. Place the `GlobalWeatherRepository.csv` dataset inside the `data/` folder.
    Download from: https://www.kaggle.com/datasets/nelgiriyewithana/global-weather-repository
 5. Launch Jupyter Notebook:
-   `
+   ```bash
    jupyter notebook Weather_Forecasting_Analysis.ipynb
-   `
+```
 
 ---
-*Built by Tomas Ignacio Nadal* | *Project for PM Accelerator*
+*Built by Tomas Ignacio Nadal* | *Project for PM Accelerator — The Product Manager Accelerator is a premier program designed to help professionals transition into and accelerate their careers in product management. Our mission is to empower individuals with the skills, network, and experience needed to succeed in tech.*

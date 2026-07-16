@@ -1,4 +1,4 @@
-﻿# Weather App — Frontend
+# Weather App — Frontend
 
 Frontend implementation for the PM Accelerator AI Engineer Intern Technical Assessment.
 
@@ -34,13 +34,13 @@ All API calls include error boundaries and strict fallback chains.
 
 ## Development Setup
 
-`ash
+```bash
 # Install dependencies
 npm install
 
 # Start dev server (http://localhost:5173)
 npm run dev
-`
+```
 
 ## Stack
 - React 19 / Vite 8

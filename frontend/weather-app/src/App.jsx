@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar';
 import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
 import Footer from './components/Footer';
+import Clock from './components/Clock';
 import { getWeather, getWeatherByCoords } from './services/weatherApi';
 import './App.css'; // For the top-bar and theme toggle button
 
@@ -73,16 +74,19 @@ function App() {
   };
 
   useEffect(() => {
-    fetchWeather('London');
+    handleLocation();
   }, []);
 
   return (
     <div className="container">
       <div className="top-bar">
         <h1 className="app-logo">WeatherApp</h1>
-        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <Clock timezone={weatherData?.current?.timezone} />
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
       </div>
 
       <header>

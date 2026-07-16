@@ -13,8 +13,10 @@
 
 .search-icon {
   position: absolute;
-  left: 1rem;
+  left: 1.25rem;
   color: var(--text-secondary);
+  z-index: 10;
+  pointer-events: none;
 }
 
 .input-wrapper input {
@@ -22,7 +24,8 @@
   padding: 0.75rem 1rem 0.75rem 3rem;
   border-radius: 12px;
   border: 1px solid var(--glass-border);
-  background: rgba(15, 23, 42, 0.4);
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
   color: var(--text-primary);
   font-size: 1rem;
   outline: none;
@@ -31,7 +34,7 @@
 
 .input-wrapper input:focus {
   border-color: var(--accent-color);
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--bg-color);
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
@@ -49,7 +52,7 @@
 }
 
 .btn-icon {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--glass-bg);
   border: 1px solid var(--glass-border);
   color: var(--text-secondary);
   padding: 0 1rem;
@@ -61,7 +64,7 @@
 }
 
 .btn-icon:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--bg-color);
   color: var(--text-primary);
 }
 
@@ -75,7 +78,7 @@
   top: calc(100% + 0.5rem);
   left: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.95);
+  background: var(--bg-color);
   backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: 12px;

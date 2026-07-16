@@ -8,6 +8,7 @@ export default function SearchBar({ onSearch, onLocation }) {
   const [suggestions, setSuggestions] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const [selectedSuggestion, setSelectedSuggestion] = useState(null);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
@@ -44,12 +45,17 @@ export default function SearchBar({ onSearch, onLocation }) {
     } else if (query.trim()) {
       setShowDropdown(false);
       setHighlightedIndex(-1);
-      onSearch(query);
+      if (selectedSuggestion && query === selectedSuggestion.name) {
+        onSearch(selectedSuggestion);
+      } else {
+        onSearch(query);
+      }
     }
   };
 
   const handleSelectSuggestion = (suggestion) => {
     setQuery(suggestion.name);
+    setSelectedSuggestion(suggestion);
     setShowDropdown(false);
     setHighlightedIndex(-1);
     onSearch(suggestion);
@@ -81,6 +87,7 @@ export default function SearchBar({ onSearch, onLocation }) {
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
+              setSelectedSuggestion(null);
               setShowDropdown(true);
             }}
             onFocus={() => setShowDropdown(true)}

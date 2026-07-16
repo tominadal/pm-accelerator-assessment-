@@ -25,6 +25,7 @@ const fetchWeatherData = async (lat, lon, locationName) => {
   
   const current = {
     location: locationName,
+    timezone: data.timezone,
     temperature: Math.round(data.current.temperature_2m),
     feelsLike: Math.round(data.current.apparent_temperature),
     condition: getWeatherCondition(data.current.weather_code, data.current.is_day),

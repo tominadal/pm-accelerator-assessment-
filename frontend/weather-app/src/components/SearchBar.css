@@ -99,8 +99,10 @@
   color: var(--text-primary);
 }
 
-.suggestions-dropdown li:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.suggestions-dropdown li:hover,
+.suggestions-dropdown li.highlighted {
+  background-color: rgba(59, 130, 246, 0.15);
+  outline: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .suggestions-dropdown::-webkit-scrollbar {
